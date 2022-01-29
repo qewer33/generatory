@@ -24,7 +24,6 @@ extra_spacing_top = -3
 font_data = ExtResource( 2 )
 
 [node name="AboutDialog" type="AcceptDialog"]
-visible = true
 margin_right = 420.0
 margin_bottom = 570.0
 window_title = "About Generatory"

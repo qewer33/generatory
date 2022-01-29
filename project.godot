@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Button",
+"class": "DualStateButton",
+"language": "GDScript",
+"path": "res://src/widgets/dual_state_button/DualStateButton.gd"
+}, {
 "base": "Node2D",
 "class": "Generator",
 "language": "GDScript",
 "path": "res://src/generators/Generator.gd"
 } ]
 _global_script_class_icons={
+"DualStateButton": "",
 "Generator": ""
 }
 

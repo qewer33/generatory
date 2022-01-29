@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/widgets/option_input/OptionInput.gd" type="Script" id=1]
-[ext_resource path="res://src/widgets/lock_button/LockButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/widgets/dual_state_button/DualStateButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/icons/white/icon_unlocked.svg" type="Texture" id=3]
+[ext_resource path="res://assets/icons/white/icon_locked.svg" type="Texture" id=4]
 
 [node name="OptionInput" type="HBoxContainer"]
 margin_right = 112.0
@@ -57,3 +59,7 @@ margin_left = 170.0
 margin_right = 200.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "Lock this parameters value from randomizing"
+state_one_icon = ExtResource( 3 )
+state_two_icon = ExtResource( 4 )
+toggle = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/App.gd" type="Script" id=1]
 [ext_resource path="res://src/widgets/sidebar/Sidebar.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/widgets/viewer/Viewer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/GenHandler.gd" type="Script" id=6]
 [ext_resource path="res://src/dialogs/about_dialog/AboutDialog.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/widgets/overlay_sidebar/OverlaySidebar.tscn" type="PackedScene" id=8]
 
 [node name="App" type="Control"]
 anchor_right = 1.0
@@ -19,14 +20,11 @@ __meta__ = {
 
 [node name="Viewer" parent="." instance=ExtResource( 5 )]
 
-[node name="Sidebar" parent="." instance=ExtResource( 2 )]
-margin_bottom = 14400.0
-size_flags_vertical = 0
-
 [node name="HelpButtonMargin" type="MarginContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -50.0
+margin_left = -100.0
+margin_right = -50.0
 margin_bottom = 50.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -46,6 +44,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sidebar" parent="." instance=ExtResource( 2 )]
+margin_bottom = 18000.0
+size_flags_vertical = 0
+
+[node name="OverlaySidebar" parent="." instance=ExtResource( 8 )]
+visible = false
+margin_bottom = 1800.0
+
 [node name="FileDialog" type="FileDialog" parent="."]
 margin_left = 244.0
 margin_top = 92.0
@@ -63,7 +69,6 @@ __meta__ = {
 }
 
 [node name="AboutDialog" parent="." instance=ExtResource( 7 )]
-visible = false
 margin_left = 279.0
 margin_top = 137.0
 margin_right = 699.0
