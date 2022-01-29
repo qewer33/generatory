@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/themes/dark/dark.tres" type="Theme" id=3]
 [ext_resource path="res://assets/icons/white/icon_help.svg" type="Texture" id=4]
 [ext_resource path="res://src/widgets/viewer/Viewer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Loader.gd" type="Script" id=6]
+[ext_resource path="res://src/GenHandler.gd" type="Script" id=6]
 [ext_resource path="res://src/dialogs/AboutDialog.tscn" type="PackedScene" id=7]
 
 [node name="App" type="Control"]
@@ -20,7 +20,7 @@ __meta__ = {
 [node name="Viewer" parent="." instance=ExtResource( 5 )]
 
 [node name="Sidebar" parent="." instance=ExtResource( 2 )]
-margin_bottom = 12000.0
+margin_bottom = 12600.0
 size_flags_vertical = 0
 
 [node name="HelpButtonMargin" type="MarginContainer" parent="."]
@@ -46,9 +46,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Loader" type="Node" parent="."]
-script = ExtResource( 6 )
-
 [node name="FileDialog" type="FileDialog" parent="."]
 margin_left = 244.0
 margin_top = 92.0
@@ -71,6 +68,11 @@ margin_left = 279.0
 margin_top = 137.0
 margin_right = 699.0
 margin_bottom = 439.0
+
+[node name="GenHandler" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="OverlayHandler" type="Node" parent="."]
 
 [connection signal="pressed" from="HelpButtonMargin/HelpButton" to="." method="_on_HelpButton_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]

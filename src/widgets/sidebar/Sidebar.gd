@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var loader:Node = get_parent().find_node("Loader")
+onready var loader:Node = get_parent().find_node("GenHandler")
 onready var viewer:Panel = get_parent().find_node("Viewer")
 onready var viewport:Viewport = viewer.viewport
 onready var file_dialog:FileDialog = get_parent().find_node("FileDialog")
