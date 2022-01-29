@@ -62,7 +62,7 @@ tracks/0/keys = {
 [node name="Sidebar" type="HBoxContainer"]
 anchor_bottom = 1.0
 margin_right = 350.0
-margin_bottom = 12000.0
+margin_bottom = 12600.0
 rect_min_size = Vector2( 300, 400 )
 size_flags_horizontal = 0
 script = ExtResource( 2 )

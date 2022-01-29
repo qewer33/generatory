@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/icons/white/icon_help.svg" type="Texture" id=4]
 [ext_resource path="res://src/widgets/viewer/Viewer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/GenHandler.gd" type="Script" id=6]
-[ext_resource path="res://src/dialogs/AboutDialog.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/dialogs/about_dialog/AboutDialog.tscn" type="PackedScene" id=7]
 
 [node name="App" type="Control"]
 anchor_right = 1.0
@@ -20,7 +20,7 @@ __meta__ = {
 [node name="Viewer" parent="." instance=ExtResource( 5 )]
 
 [node name="Sidebar" parent="." instance=ExtResource( 2 )]
-margin_bottom = 12600.0
+margin_bottom = 14400.0
 size_flags_vertical = 0
 
 [node name="HelpButtonMargin" type="MarginContainer" parent="."]
