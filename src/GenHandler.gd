@@ -46,7 +46,6 @@ func randomize_parameters() -> void:
 	for param in gen.parameters:
 		# If param is inside the locked array, then don't randomize
 		if not gen.locked.has(param):
-			print(param)
 			match typeof(gen.parameters[param][0]):
 					TYPE_BOOL:
 						gen.parameters[param][0] = bool(int(randf()))

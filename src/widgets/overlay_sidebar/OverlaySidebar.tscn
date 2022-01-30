@@ -53,7 +53,7 @@ tracks/0/keys = {
 [node name="OverlaySidebar" type="HBoxContainer"]
 anchor_bottom = 1.0
 margin_right = 300.0
-margin_bottom = 1800.0
+margin_bottom = 2400.0
 rect_min_size = Vector2( 300, 400 )
 size_flags_horizontal = 0
 script = ExtResource( 2 )
@@ -63,7 +63,7 @@ __meta__ = {
 
 [node name="ButtonMargin" type="MarginContainer" parent="."]
 margin_right = 46.0
-margin_bottom = 2400.0
+margin_bottom = 3000.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -84,21 +84,21 @@ icon = ExtResource( 1 )
 [node name="Panel" type="PanelContainer" parent="."]
 margin_left = 50.0
 margin_right = 300.0
-margin_bottom = 2400.0
+margin_bottom = 3000.0
 size_flags_horizontal = 3
 custom_styles/panel = SubResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 margin_left = 1.0
 margin_right = 250.0
-margin_bottom = 2400.0
+margin_bottom = 3000.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="OptionsMargin" type="MarginContainer" parent="Panel/VBoxContainer"]
 margin_right = 249.0
-margin_bottom = 2400.0
+margin_bottom = 3000.0
 size_flags_vertical = 3
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
@@ -109,24 +109,28 @@ custom_constants/margin_bottom = 10
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 239.0
-margin_bottom = 2390.0
+margin_bottom = 2990.0
 custom_constants/separation = 10
 
-[node name="AddButton" type="Button" parent="Panel/VBoxContainer/OptionsMargin/VBoxContainer"]
+[node name="AddButton" type="MenuButton" parent="Panel/VBoxContainer/OptionsMargin/VBoxContainer"]
 margin_right = 229.0
 margin_bottom = 20.0
 text = "Add Overlay"
 icon = ExtResource( 3 )
+flat = false
 expand_icon = true
 
 [node name="HideButton" parent="Panel/VBoxContainer/OptionsMargin/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 30.0
 margin_right = 229.0
 margin_bottom = 62.0
+text = "Hide Overlays"
+icon = ExtResource( 1 )
+expand_icon = true
 state_one_icon = ExtResource( 1 )
-state_one_text = "Hide Layers"
+state_one_text = "Hide Overlays"
 state_two_icon = ExtResource( 5 )
-state_two_text = "Show Layers"
+state_two_text = "Show Overlays"
 
 [node name="Separator" type="ColorRect" parent="Panel/VBoxContainer/OptionsMargin/VBoxContainer"]
 margin_top = 72.0
@@ -136,7 +140,7 @@ margin_bottom = 72.0
 [node name="OverlaysScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/OptionsMargin/VBoxContainer"]
 margin_top = 82.0
 margin_right = 229.0
-margin_bottom = 2380.0
+margin_bottom = 2980.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

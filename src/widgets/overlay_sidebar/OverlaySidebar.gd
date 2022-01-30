@@ -1,6 +1,10 @@
 extends HBoxContainer
 
 
+onready var handler:Node = get_parent().find_node("OverlayHandler")
+onready var viewer:Panel = get_parent().find_node("Viewer")
+onready var viewport:Viewport = viewer.viewport
+
 onready var anim_player: = $AnimationPlayer
 onready var close_button: = find_node("CloseButton")
 
