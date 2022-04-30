@@ -7,10 +7,10 @@ onready var about_dialog: = $AboutDialog
 
 
 func _ready() -> void:
-	pass
+	about_dialog.popup_centered()
 
 
-func _on_HelpButton_pressed() -> void:
+func _on_InfoButton_pressed() -> void:
 	about_dialog.popup_centered()
 
 func _on_FileDialog_file_selected(path: String) -> void:

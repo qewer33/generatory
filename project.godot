@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Generator",
 "language": "GDScript",
 "path": "res://src/generators/Generator.gd"
+}, {
+"base": "Node2D",
+"class": "Overlay",
+"language": "GDScript",
+"path": "res://src/overlays/Overlay.gd"
 } ]
 _global_script_class_icons={
 "DualStateButton": "",
-"Generator": ""
+"Generator": "",
+"Overlay": ""
 }
 
 [application]
@@ -31,6 +37,15 @@ run/main_scene="res://src/App.tscn"
 boot_splash/image="res://splash.png"
 boot_splash/bg_color=Color( 0.160784, 0.168627, 0.172549, 1 )
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://src/Global.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [input]
 

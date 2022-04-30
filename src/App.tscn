@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/App.gd" type="Script" id=1]
 [ext_resource path="res://src/widgets/sidebar/Sidebar.tscn" type="PackedScene" id=2]
@@ -8,22 +8,20 @@
 [ext_resource path="res://src/GenHandler.gd" type="Script" id=6]
 [ext_resource path="res://src/dialogs/about_dialog/AboutDialog.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/widgets/overlay_sidebar/OverlaySidebar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/icons/white/icon_info.svg" type="Texture" id=9]
 
 [node name="App" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewer" parent="." instance=ExtResource( 5 )]
 
-[node name="HelpButtonMargin" type="MarginContainer" parent="."]
+[node name="TopButtonsMargin" type="MarginContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -100.0
+margin_left = -140.0
 margin_right = -50.0
 margin_bottom = 50.0
 custom_constants/margin_right = 5
@@ -34,23 +32,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HelpButton" type="Button" parent="HelpButtonMargin"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TopButtonsMargin"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 45.0
+margin_right = 90.0
 margin_bottom = 45.0
+custom_constants/separation = 5
+
+[node name="HelpButton" type="Button" parent="TopButtonsMargin/HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
 icon = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="InfoButton" type="Button" parent="TopButtonsMargin/HBoxContainer"]
+margin_left = 45.0
+margin_right = 85.0
+margin_bottom = 40.0
+icon = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sidebar" parent="." instance=ExtResource( 2 )]
-margin_bottom = 19800.0
+margin_bottom = 21600.0
 size_flags_vertical = 0
 
 [node name="OverlaySidebar" parent="." instance=ExtResource( 8 )]
 visible = false
-margin_bottom = 3600.0
+margin_bottom = 5400.0
 
 [node name="FileDialog" type="FileDialog" parent="."]
 margin_left = 244.0
@@ -79,5 +91,5 @@ script = ExtResource( 6 )
 
 [node name="OverlayHandler" type="Node" parent="."]
 
-[connection signal="pressed" from="HelpButtonMargin/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="TopButtonsMargin/HBoxContainer/InfoButton" to="." method="_on_InfoButton_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
