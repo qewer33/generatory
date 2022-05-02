@@ -19,21 +19,21 @@ func _ready() -> void:
 func set_label(text:String) -> void:
 	$Label.text = text
 	
-func set_type(param:Array) -> void:
-	match typeof(param[0]):
-			TYPE_BOOL:
+func set_type(param) -> void:
+	match param.TYPE:
+			Global.PropertyType.BOOL:
 				type = 0
-			TYPE_INT, TYPE_REAL:
+			Global.PropertyType.INT, Global.PropertyType.FLOAT:
 				type = 1
-				inputs[type].min_value = param[1]
-				inputs[type].max_value = param[2]
-				inputs[type].step = param[3]
-				inputs[type].value = param[0]
-			TYPE_STRING:
+				inputs[type].min_value = param.min_value
+				inputs[type].max_value = param.max_value
+				inputs[type].step = param.value_increment
+				inputs[type].value = param.value
+			Global.PropertyType.STRING:
 				type = 2
-			TYPE_COLOR:
+			Global.PropertyType.COLOR:
 				type = 3
-				inputs[type].color = param[0]
+				inputs[type].color = param.value
 				
 	inputs[type].visible = true
 

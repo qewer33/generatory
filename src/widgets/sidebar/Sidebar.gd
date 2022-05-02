@@ -50,7 +50,7 @@ func _fill_options() -> void:
 	# reset option_inputs
 	option_inputs = []
 	
-	# create new OptionInput for each parameter
+	# create a new OptionInput for each parameter
 	var parameters = handler.gen.parameters
 	for param in parameters:
 		
@@ -71,7 +71,7 @@ func _fill_options() -> void:
 func set_parameters() -> void:
 	for i in range(handler.gen.parameters.size()):
 		var keys = handler.gen.parameters.keys()
-		handler.gen.parameters[keys[i]][0] = option_inputs[i].get_active_value()
+		handler.gen.parameters[keys[i]].value = option_inputs[i].get_active_value()
 
 
 func _on_CloseButton_pressed() -> void:
